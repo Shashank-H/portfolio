@@ -1202,3 +1202,49 @@ footer::after {
         max-width: 300px;
     }
 }
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .hero-content .name {
+        font-size: 2.5rem;
+    }
+
+    .hero-content .role {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .experience-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .experience-item ul {
+        padding-left: 1rem;
+    }
+
+    .experience-item li {
+        margin-bottom: 0.6rem;
+    }
+
+    .skill-category h3 {
+        font-size: 1.2rem;
+    }
+
+    .skill-category ul {
+        padding-left: 1rem;
+    }
+
+    .skill-category li {
+        margin-bottom: 0.6rem;
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
+    }
+}
