@@ -1,0 +1,205 @@
+:root {
+    --bg-color: #1a1b26;
+    --text-color: #a9b1d6;
+    --prompt-color: #7aa2f7;
+    --accent-color: #9ece6a;
+    --error-color: #f7768e;
+    --header-bg: #24283b;
+    --terminal-bg: #1a1b26;
+    --link-color: #7dcfff;
+    --command-color: #bb9af7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    background-color: #16161e;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terminal {
+    width: 90%;
+    max-width: 900px;
+    background-color: var(--terminal-bg);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.terminal-header {
+    background-color: var(--header-bg);
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+    margin-right: 1rem;
+}
+
+.terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close {
+    background-color: #ff5f57;
+}
+
+.minimize {
+    background-color: #febc2e;
+}
+
+.maximize {
+    background-color: #28c840;
+}
+
+.terminal-title {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.terminal-content {
+    padding: 1.5rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.command {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.prompt {
+    color: var(--prompt-color);
+    white-space: nowrap;
+}
+
+.command span:not(.prompt) {
+    color: var(--command-color);
+}
+
+.output {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    padding-left: calc(2rem + 8px);
+}
+
+.ascii-art {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.achievement {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-left: 2px solid var(--accent-color);
+}
+
+.achievement h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.code-block {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Cursor Animation */
+.cursor {
+    animation: blink 1s infinite;
+    color: var(--text-color);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Custom Scrollbar */
+.terminal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+    background: var(--terminal-bg);
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+    background: var(--header-bg);
+    border-radius: 4px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--prompt-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .terminal {
+        width: 100%;
+    }
+
+    .terminal-content {
+        padding: 1rem;
+    }
+
+    .output {
+        padding-left: 1rem;
+    }
+
+    .ascii-art {
+        font-size: 0.6rem;
+    }
+}
+
+/* Command typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end);
+}
