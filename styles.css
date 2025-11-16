@@ -26,6 +26,8 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
     font-family: 'Space Mono', monospace;
     background-color: light-dark(var(--background-color), var(--background-color-dark));
@@ -43,6 +45,11 @@ header nav {
 
 section {
     margin-bottom: 2rem;
+}
+
+#header-contact {
+    margin-bottom: 0;
+    display: none;
 }
 
 .nav-links {
@@ -92,7 +99,7 @@ section {
 }
 
 .experience-container h3 img {
-    width: 5rem;
+    width: 5.5rem;
     height: 2.5rem;
     margin-right: 0.5rem;
     display: block;
@@ -124,6 +131,64 @@ section {
     gap: 1rem;
 }
 
+.all-projects {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.project-container .involvement {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.2rem;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.project-container .involvement span {
+    opacity: 0.8;
+    width: fit-content;
+    font-size: 0.8rem;
+}
+
+.project-container .outcome {
+    margin-top: 0.5rem;
+    list-style: inside;
+}
+
+.project-container {
+    margin-bottom: 0.5rem;
+}
+
+.contact-container {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.contact-container li {
+    display: flex;
+    align-items: center;
+    border: 1px solid light-dark(var(--text-color), var(--text-color-dark));
+    padding: 0.2rem 0.5rem;
+}
+
+.contact-container li img {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    padding-right: 0.5rem;
+    border-right: 1px solid light-dark(var(--text-color), var(--text-color-dark));
+    margin-right: 0.5rem;
+} 
+
+
 @media screen and (max-width: 768px) {
     .skill-container ul {
         grid-template-columns: repeat(2, 1fr);
@@ -134,14 +199,36 @@ section {
         grid-template-columns: repeat(1, 1fr);
         gap: 0.5rem;
     }
+    
+    .all-projects {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.5rem;
+    }
 }
 
 @media print {
     :root {
         font-size: 12px;
     }
+
+    header nav{
+        display: none;
+    }
+
     .all-experiences {
         grid-template-columns: repeat(1, 1fr);
         gap: 0.5rem;
+    }
+    .all-projects {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.5rem;
+    }
+
+    #header-contact {
+        display: block;
+    }
+
+    #contact {
+        display: none;
     }
 }
