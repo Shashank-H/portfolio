@@ -54,6 +54,7 @@ section {
 
 .nav-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     list-style: none;
 }
@@ -203,6 +204,14 @@ section {
     .all-projects {
         grid-template-columns: repeat(1, 1fr);
         gap: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skill-container ul li img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
     }
 }
 
