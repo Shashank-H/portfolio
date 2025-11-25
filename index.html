@@ -1,544 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Shashank H - Senior Software Engineer specializing in Full Stack Development, AI, and System Design"
-    />
-    <title>Shashank H - Generalist Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-      import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyCAacgNGs_SXhHA5FAI2GONvbpsX9hTiYI",
-        authDomain: "shashank-portfolio-site.firebaseapp.com",
-        projectId: "shashank-portfolio-site",
-        storageBucket: "shashank-portfolio-site.firebasestorage.app",
-        messagingSenderId: "351249282442",
-        appId: "1:351249282442:web:dc0b2ce97467afa40d8473",
-        measurementId: "G-FELVS32KZZ"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
 
-      // Make logResumeDownload function available globally
-      window.logResumeDownload = function() {
-        logEvent(analytics, 'resume_download');
-      };
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Shashank H - Senior Software Engineer specializing in Full Stack Development, AI, and System Design" />
+  <title>Shashank H - Generalist Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-    </script>
-  </head>
-  <body>
-    <header>
-      <h1>Shashank Harikripa</h1>
-      <h5>Generalist Engineer | Full Stack | AI | System Design</h5>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a onclick="logResumeDownload()" href="Shashank H - Generalist Engineer.pdf" download>Resume</a></li>
-        </ul>
-      </nav>
-      <section id="header-contact">
-        <ul class="contact-container">
-          <a
-            href="https://www.linkedin.com/in/shashank-h/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <li>
-              <img src="assets/linkedin.svg" alt="Linkedin icon" />
-              shashank-h
-            </li>
-          </a>
-          <a
-            href="https://github.com/shashank-h"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <li>
-              <img src="assets/github.svg" alt="Github icon" />
-              shashank-h
-            </li>
-          </a>
-          <a
-            href="mailto:shashankharikripa00@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <li>
-              <img src="assets/email.svg" alt="Email icon" />
-              shashankharikripa00@gmail.com
-            </li>
-          </a>
-        </ul>
-      </section>
-    </header>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Cracked - High agency, High ownership, High impact Generalist Engineer
-        <br />
-        <br />
-        Started out with frontend, then mobile, cross-platform, blockchain, AI
-        (visual) etc..
-        <br />
-        Experienced mostly working with startups, wearing almost all the hats
-        one can wear. Worked with multiple technologies including niche ones
-        which only a few may have heard.
-        <br />
-        Owned, architected and implemented high ingress video inference engine
-        for real time live inference for industrial applications with
-        microservices architecture.
-        <br />
-        <br />
-        Mentored and lead my team to deliver high quality and scalable systems
-        on tight timelines while communicating with key stakeholders.
-      </p>
-    </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <p>
-        Skilled Generalist Engineer, Fast Learner, likes to think in first
-        principles, flexible, product thinker, user focussed.
-      </p>
-      <div class="skill-container">
-        <ul>
-          <li>
-            <img src="assets/nodejs.svg" />
-            Node Js
-          </li>
-          <li>
-            <img src="assets/python.svg" />
-            Python
-          </li>
-          <li>
-            <img src="assets/js.svg" alt="JS icon" />
-            JavaScript
-          </li>
-          <li>
-            <img src="assets/ts.svg" alt="TS icon" />
-            TypeScript
-          </li>
-          <li>
-            <img src="assets/rest.svg" alt="REST APIs icon" />
-            REST APIs
-          </li>
-          <li>
-            <img src="assets/postgres.svg" alt="Postgres icon" />
-            Postgres
-          </li>
-          <li>
-            <img src="assets/mongo.svg" alt="MongoDB icon" />
-            MongoDB
-          </li>
-          <li>
-            <img src="assets/docker.svg" alt="Docker icon" />
-            Docker
-          </li>
-          <li>
-            <img src="assets/cloud.svg" alt="Cloud icon" />
-            Cloud
-          </li>
-          <li>
-            <img src="assets/react.svg" alt="React icon" />
-            React
-          </li>
-          <li>
-            <img src="assets/react-native.svg" alt="ReactNative icon" />
-            ReactNative
-          </li>
-          <li>
-            <img src="assets/multithreading.svg" alt="Threads icon" />
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCAacgNGs_SXhHA5FAI2GONvbpsX9hTiYI",
+      authDomain: "shashank-portfolio-site.firebaseapp.com",
+      projectId: "shashank-portfolio-site",
+      storageBucket: "shashank-portfolio-site.firebasestorage.app",
+      messagingSenderId: "351249282442",
+      appId: "1:351249282442:web:dc0b2ce97467afa40d8473",
+      measurementId: "G-FELVS32KZZ"
+    };
 
-            Multithreading
-          </li>
-          <li>
-            <img src="assets/performance.svg" alt="Performance icon" />
-            Performance Optimization
-          </li>
-          <li>
-            <img src="assets/sys-design.svg" alt="System Design icon" />
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
 
-            System Design
-          </li>
-          <li>
-            <img src="assets/microservice.svg" alt="Microservice icon" />
-            Microservices
-          </li>
-          <li>
-            <img src="assets/team.svg" alt="Team icon" />
-            Leadership
-          </li>
-          <li>
-            <img src="assets/profile.svg" alt="Profile icon" />
-            Recruitment
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section id="experience">
-      <h2>Experience</h2>
+    // Make logResumeDownload function available globally
+    window.logResumeDownload = function () {
+      logEvent(analytics, 'resume_download');
+    };
 
-      <div class="all-experiences">
-        <!-- Loopr AI - Senior Software Engineer -->
-        <div class="experience-container">
-          <h3>
-            <a href="https://loopr.ai" target="_blank" rel="noreferrer">
-              <img src="assets/loopr.svg" alt="Loopr AI Logo" />
-            </a>
-            Senior Software Engineer
-          </h3>
-          <p class="role-details">
-            Loopr AI ~ January 2024 - Present
-          </p>
-          <ul class="experience-list">
-            <li>
-              Lead Implementation of LooprIQ Edge products from scratch with
-              constant consultation from CPO, CEO & VP of Engineering
-            </li>
-            <li>
-              Mentored and lead a team of 5 aligning with the product vison and
-              helped implement the end to end product and new features.
-            </li>
-            <li>
-              Implemented AI inference (defect detection) application on live
-              video feed on an edge device with limited resources by interfacing
-              with physical devices, using microservice architecture with
-              minimal failure.
-            </li>
-            <li>
-              Spearhead design and development efforts of LooprIQ Verify, second
-              offering in the LooprIQ line of products for Assembly verification
-              and validation. Designed LooprIQ verify such that most core
-              features are extremely flexible just by updating config files, and
-              could be deployed to any use case just by updating the config
-              file.
-            </li>
-            <li>
-              Designed On-prem licensing of LooprIQ products in offline setting
-              so that product should only work until when it is licensed and in
-              the configuration that it is supposed to be used.
-            </li>
-            <li>
-              Lead hiring efforts for multiple engineering roles at LooprAI
-            </li>
-          </ul>
-        </div>
+  </script>
+</head>
 
-        <!-- Loopr AI - Software Engineer II -->
-        <div class="experience-container">
-          <h3>
-            <a href="https://loopr.ai" target="_blank" rel="noreferrer">
-              <img src="assets/loopr.svg" alt="Loopr AI Logo" />
-            </a>
-            Software Engineer II
-          </h3>
-          <p class="role-details">
-            Loopr AI ~ October 2022 - January 2024
-          </p>
-          <ul class="experience-list">
-            <li>
-              Implemented, Maintained Document validation Application using
-              Computer Vision (OCR) and AI
-            </li>
-            <li>
-              Developed LooprAI Platform Custom models feature to allow user to
-              train any custom model using our workflows
-            </li>
-            <li>
-              Improved performance of LooprAI training and model infrastructure
-            </li>
-            <li>
-              Lead efforts to optimise and unclutter pre-written code, improved
-              maintainability of codebase and reduced bugs. Also improved time
-              taken for debugging.
-            </li>
-            <li>
-              Designed and implemented shared inference by sharing resources b/w
-              several models. Reduced Deployment time from 15-20 mins to < 1
-              mins, reduced cloud resource consumption.
-            </li>
-            <li>
-              Implemented flow for classification models in LooprAI Platform.
-            </li>
-            <li>
-              Spearheaded system architecture design for tracking and billing
-              user actions (pay-as-you-go). Based on various factors.
-            </li>
-            <li>
-              Hired junior engineers and interns and got them up to speed with
-              the existing system. Planned and trained interns with relevant
-              tech stack and codebase.
-            </li>
-            <li>
-              Took full technical ownership of LooprIQ line of products, Design
-              and developed them ground up.
-            </li>
-            <li>
-              Designed and developed LooprIQ Inspect - Live defect detection
-              solution for edge. Defects detected from a live feed continuously.
-            </li>
-          </ul>
-        </div>
-
-        <!-- Juego Studio - Software Engineer I -->
-        <div class="experience-container">
-          <h3>
-            <!-- Placeholder logo for Juego Studio -->
-            <a href="https://juegostudio.com/" target="_blank" rel="noreferrer">
-              <img src="assets/juego.avif" alt="Juego Studio Logo" />
-            </a>
-            Software Engineer I
-          </h3>
-          <p class="role-details">
-            Juego Studio ~ January 2021 - June 2023
-          </p>
-          <ul class="experience-list">
-            <li>
-              Understood In depth about working of React Native, Native Bridges,
-              working of the Framework.
-            </li>
-            <li>
-              Worked on an internal POC for integrating a unity Game inside
-              React Native and handling message passing through Native Modules.
-            </li>
-            <li>
-              Came up with the standards for the message passing interface for
-              the above mentioned POC.
-            </li>
-            <li>
-              Created elegant and beautiful animations using Animated API.
-            </li>
-            <li>Implemented Gesture responsive UI elements form scratch.</li>
-            <li>
-              Explored different aspects of optimization in React Native
-              applications, and achieved >70% optimal and faster applications.
-            </li>
-            <li>
-              Explored Fundamentals of Blockchain/Web3 Development (Ethereum,
-              Solidity) an implemented NFT standard ERC-721 and integrated it to
-              a simple frontend using Metamask
-            </li>
-            <li>
-              Implemented Multiple Smart contracts in Solidity for use cases
-              such as NFT, Fungible tokens etc.
-            </li>
-            <li>
-              Architected defi game winning distribution protocol and
-              implemented a smart contract for Lazy Horse Race Club (LHRC) in
-              the cronos mainnet.
-              <a
-                href="https://cronoscan.com/address/0x672bb060a7b3d723ab36cf67d8cecf277fb0eeb9"
-                target="_blank"
-                rel="noreferrer"
-                >cronoscan contract</a
-              >
-            </li>
-            <li>
-              Worked on IC3D Land metaverse on the Dfinity blockchain platform.
-            </li>
-          </ul>
-        </div>
-
-        <!-- Juego Studio - Trainee Software Engineer -->
-        <div class="experience-container">
-          <h3>
-            <!-- Placeholder logo for Juego Studio -->
-
-            <a href="https://juegostudio.com/" target="_blank" rel="noreferrer">
-              <img src="assets/juego.avif" alt="Juego Studio Logo" />
-            </a>
-            Trainee Software Engineer
-          </h3>
-          <p class="role-details">
-            Juego Studio ~ July 2020 - January 2021
-          </p>
-          <ul class="experience-list">
-            <li>
-              Explored in depth about ReactJS library. And delivered 3+ elegant
-              ReactJS projects.
-            </li>
-            <li>
-              Worked on the development of a highly complex Ionic x React app
-              almost single handedly.
-            </li>
-            <li>
-              Implemented chat feature with Web Socket Protocol with real time
-              reporting of events like typing, profanity filter, and attachment
-              sharing etc.
-            </li>
-            <li>
-              Coordinated with the team to improve the efficiency of a product
-              and delivered it with 75% higher efficiency.
-            </li>
-            <li>
-              Explored React Native as a primary development track, and
-              delivered several projects.
-            </li>
-          </ul>
-        </div>
-
-        <!-- Juego Studio - Software Engineer Intern -->
-        <div class="experience-container">
-          <h3>
-            <!-- Placeholder logo for Juego Studio -->
-            <a href="https://juegostudio.com/" target="_blank" rel="noreferrer">
-              <img src="assets/juego.avif" alt="Juego Studio Logo" />
-            </a>
-            Software Engineer Intern
-          </h3>
-          <p class="role-details">
-            Juego Studio ~ February 2020 - July 2020
-          </p>
-          <ul class="experience-list">
-            <li>
-              Explored in depth about the fundamentals of web development.
-            </li>
-            <li>
-              Experienced first had about the importance of attention to detail
-            </li>
-            <li>
-              Understood the importance and in depth concepts of JavaScript
-            </li>
-            <li>
-              Worked on multiple Internal as well as client projects for web
-              using Angular, Ionic framework and delivered high performance and
-              responsive web applications
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="all-projects">
-        <div class="project-container">
-          <h3>Shared Inference System</h3>
-          <div class="involvement">
-            <span> Problem Identification, </span>
-            <span> Technical Ownership, </span>
-            <span> System Design, </span>
-            <span> Microservices, </span>
-            <span> Implementation </span>
+<body>
+  <header>
+    <h1>Shashank Harikripa</h1>
+    <h5>Generalist Engineer | Full Stack | AI | System Design</h5>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a onclick="logResumeDownload()" href="Shashank H - Generalist Engineer.pdf" download>Resume</a></li>
+        <li>
+          <button id="theme-toggle" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" class="theme-toggle-btn">
+            <!-- Palette Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+              <path
+                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.109 0-1.422 1.153-2.578 2.578-2.578 3.069 0 5.439-2.438 5.439-5.438 0-4.562-3.687-8.062-8.79-8.062z">
+              </path>
+            </svg>
+          </button>
+          <!-- Theme Menu Container -->
+          <div id="theme-menu-overlay" class="theme-menu-overlay" aria-hidden="true"></div>
+          <div id="theme-menu" class="theme-menu" role="menu" aria-hidden="true">
+            <!-- Content injected by JS -->
           </div>
-          <ul class="outcome">
-            <li>
-              Improved performance of LooprAI training and model infrastructure.
-            </li>
-            <li>
-              Reduced model deployment time from 15-20 mins to less than a min.
-            </li>
-            <li>Cost Optimization achieved for non critical deployments.</li>
-          </ul>
-        </div>
-        <div class="project-container">
-          <h3>Pay As You Go - Tracking System</h3>
-          <div class="involvement">
-            <span> Product Analysis, </span>
-            <span>User Research,</span>
-            <span> Configurability, </span>
-            <span> System Design </span>
-          </div>
-          <ul class="outcome">
-            <li>Usage tracking and billing solution design.</li>
-            <li>
-              Designed to track resource utilization per action, per user.
-            </li>
-            <li>Customizable billing and pricing service design.</li>
-          </ul>
-        </div>
-        <div class="project-container">
-          <h3>On Prem - Live Inference Engine</h3>
-          <div class="involvement">
-            <span> Product Ownership, </span>
-            <span> System Design, </span>
-            <span> Tech Lead, </span>
-            <span> Microservices, </span>
-            <span> Failure tolerance, </span>
-            <span> Networking </span>
-          </div>
-          <ul class="outcome">
-            <li>
-              Designed and implemented as system to handle live high throughput,
-              image ingress with realtime inference.
-            </li>
-            <li>
-              Optimized for on prem unreliable or farewelled networks of
-              factories with high failure tolerance.
-            </li>
-          </ul>
-        </div>
-        <div class="project-container">
-          <h3>On Prem - Licensing</h3>
-          <div class="involvement">
-            <span> System Design, </span>
-            <span> Tech Lead, </span>
-            <span> Networking, </span>
-            <span> Signed Certificates </span>
-          </div>
-          <ul class="outcome">
-            <li>
-              Designed a robust licensing system to dynamically revoke access
-              from the customer after product license expires.
-            </li>
-            <li>
-              Works without any network connectivity and without intervention
-              from the company.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
+        </li>
+      </ul>
+    </nav>
+    <script src="theme.js"></script>
+    <section id="header-contact">
       <ul class="contact-container">
-        <a
-          href="https://www.linkedin.com/in/shashank-h/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://www.linkedin.com/in/shashank-h/" target="_blank" rel="noreferrer">
           <li>
             <img src="assets/linkedin.svg" alt="Linkedin icon" />
             shashank-h
           </li>
         </a>
-        <a
-          href="https://github.com/shashank-h"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://github.com/shashank-h" target="_blank" rel="noreferrer">
           <li>
             <img src="assets/github.svg" alt="Github icon" />
             shashank-h
           </li>
         </a>
-        <a
-          href="mailto:shashankharikripa00@gmail.com"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="mailto:shashankharikripa00@gmail.com" target="_blank" rel="noreferrer">
           <li>
             <img src="assets/email.svg" alt="Email icon" />
             shashankharikripa00@gmail.com
@@ -546,5 +100,442 @@
         </a>
       </ul>
     </section>
-  </body>
+  </header>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Cracked - High agency, High ownership, High impact Generalist Engineer
+      <br />
+      <br />
+      Started out with frontend, then mobile, cross-platform, blockchain, AI
+      (visual) etc..
+      <br />
+      Experienced mostly working with startups, wearing almost all the hats
+      one can wear. Worked with multiple technologies including niche ones
+      which only a few may have heard.
+      <br />
+      Owned, architected and implemented high ingress video inference engine
+      for real time live inference for industrial applications with
+      microservices architecture.
+      <br />
+      <br />
+      Mentored and lead my team to deliver high quality and scalable systems
+      on tight timelines while communicating with key stakeholders.
+    </p>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>
+      Skilled Generalist Engineer, Fast Learner, likes to think in first
+      principles, flexible, product thinker, user focussed.
+    </p>
+    <div class="skill-container">
+      <ul>
+        <li>
+          <img src="assets/nodejs.svg" />
+          Node Js
+        </li>
+        <li>
+          <img src="assets/python.svg" />
+          Python
+        </li>
+        <li>
+          <img src="assets/js.svg" alt="JS icon" />
+          JavaScript
+        </li>
+        <li>
+          <img src="assets/ts.svg" alt="TS icon" />
+          TypeScript
+        </li>
+        <li>
+          <img src="assets/rest.svg" alt="REST APIs icon" />
+          REST APIs
+        </li>
+        <li>
+          <img src="assets/postgres.svg" alt="Postgres icon" />
+          Postgres
+        </li>
+        <li>
+          <img src="assets/mongo.svg" alt="MongoDB icon" />
+          MongoDB
+        </li>
+        <li>
+          <img src="assets/docker.svg" alt="Docker icon" />
+          Docker
+        </li>
+        <li>
+          <img src="assets/cloud.svg" alt="Cloud icon" />
+          Cloud
+        </li>
+        <li>
+          <img src="assets/react.svg" alt="React icon" />
+          React
+        </li>
+        <li>
+          <img src="assets/react-native.svg" alt="ReactNative icon" />
+          ReactNative
+        </li>
+        <li>
+          <img src="assets/multithreading.svg" alt="Threads icon" />
+
+          Multithreading
+        </li>
+        <li>
+          <img src="assets/performance.svg" alt="Performance icon" />
+          Performance Optimization
+        </li>
+        <li>
+          <img src="assets/sys-design.svg" alt="System Design icon" />
+
+          System Design
+        </li>
+        <li>
+          <img src="assets/microservice.svg" alt="Microservice icon" />
+          Microservices
+        </li>
+        <li>
+          <img src="assets/team.svg" alt="Team icon" />
+          Leadership
+        </li>
+        <li>
+          <img src="assets/profile.svg" alt="Profile icon" />
+          Recruitment
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="all-experiences">
+      <!-- Loopr AI - Senior Software Engineer -->
+      <div class="experience-container">
+        <h3>
+          <a href="https://loopr.ai" target="_blank" rel="noreferrer">
+            <img src="assets/loopr.svg" alt="Loopr AI Logo" />
+          </a>
+          Senior Software Engineer
+        </h3>
+        <p class="role-details">
+          Loopr AI ~ January 2024 - Present
+        </p>
+        <ul class="experience-list">
+          <li>
+            Lead Implementation of LooprIQ Edge products from scratch with
+            constant consultation from CPO, CEO & VP of Engineering
+          </li>
+          <li>
+            Mentored and lead a team of 5 aligning with the product vison and
+            helped implement the end to end product and new features.
+          </li>
+          <li>
+            Implemented AI inference (defect detection) application on live
+            video feed on an edge device with limited resources by interfacing
+            with physical devices, using microservice architecture with
+            minimal failure.
+          </li>
+          <li>
+            Spearhead design and development efforts of LooprIQ Verify, second
+            offering in the LooprIQ line of products for Assembly verification
+            and validation. Designed LooprIQ verify such that most core
+            features are extremely flexible just by updating config files, and
+            could be deployed to any use case just by updating the config
+            file.
+          </li>
+          <li>
+            Designed On-prem licensing of LooprIQ products in offline setting
+            so that product should only work until when it is licensed and in
+            the configuration that it is supposed to be used.
+          </li>
+          <li>
+            Lead hiring efforts for multiple engineering roles at LooprAI
+          </li>
+        </ul>
+      </div>
+
+      <!-- Loopr AI - Software Engineer II -->
+      <div class="experience-container">
+        <h3>
+          <a href="https://loopr.ai" target="_blank" rel="noreferrer">
+            <img src="assets/loopr.svg" alt="Loopr AI Logo" />
+          </a>
+          Software Engineer II
+        </h3>
+        <p class="role-details">
+          Loopr AI ~ October 2022 - January 2024
+        </p>
+        <ul class="experience-list">
+          <li>
+            Implemented, Maintained Document validation Application using
+            Computer Vision (OCR) and AI
+          </li>
+          <li>
+            Developed LooprAI Platform Custom models feature to allow user to
+            train any custom model using our workflows
+          </li>
+          <li>
+            Improved performance of LooprAI training and model infrastructure
+          </li>
+          <li>
+            Lead efforts to optimise and unclutter pre-written code, improved
+            maintainability of codebase and reduced bugs. Also improved time
+            taken for debugging.
+          </li>
+          <li>
+            Designed and implemented shared inference by sharing resources b/w
+            several models. Reduced Deployment time from 15-20 mins to < 1 mins, reduced cloud resource consumption.
+              </li>
+          <li>
+            Implemented flow for classification models in LooprAI Platform.
+          </li>
+          <li>
+            Spearheaded system architecture design for tracking and billing
+            user actions (pay-as-you-go). Based on various factors.
+          </li>
+          <li>
+            Hired junior engineers and interns and got them up to speed with
+            the existing system. Planned and trained interns with relevant
+            tech stack and codebase.
+          </li>
+          <li>
+            Took full technical ownership of LooprIQ line of products, Design
+            and developed them ground up.
+          </li>
+          <li>
+            Designed and developed LooprIQ Inspect - Live defect detection
+            solution for edge. Defects detected from a live feed continuously.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Juego Studio - Software Engineer I -->
+      <div class="experience-container">
+        <h3>
+          <!-- Placeholder logo for Juego Studio -->
+          <a href="https://juegostudio.com/" target="_blank" rel="noreferrer">
+            <img src="assets/juego.avif" alt="Juego Studio Logo" />
+          </a>
+          Software Engineer I
+        </h3>
+        <p class="role-details">
+          Juego Studio ~ January 2021 - June 2023
+        </p>
+        <ul class="experience-list">
+          <li>
+            Understood In depth about working of React Native, Native Bridges,
+            working of the Framework.
+          </li>
+          <li>
+            Worked on an internal POC for integrating a unity Game inside
+            React Native and handling message passing through Native Modules.
+          </li>
+          <li>
+            Came up with the standards for the message passing interface for
+            the above mentioned POC.
+          </li>
+          <li>
+            Created elegant and beautiful animations using Animated API.
+          </li>
+          <li>Implemented Gesture responsive UI elements form scratch.</li>
+          <li>
+            Explored different aspects of optimization in React Native
+            applications, and achieved >70% optimal and faster applications.
+          </li>
+          <li>
+            Explored Fundamentals of Blockchain/Web3 Development (Ethereum,
+            Solidity) an implemented NFT standard ERC-721 and integrated it to
+            a simple frontend using Metamask
+          </li>
+          <li>
+            Implemented Multiple Smart contracts in Solidity for use cases
+            such as NFT, Fungible tokens etc.
+          </li>
+          <li>
+            Architected defi game winning distribution protocol and
+            implemented a smart contract for Lazy Horse Race Club (LHRC) in
+            the cronos mainnet.
+            <a href="https://cronoscan.com/address/0x672bb060a7b3d723ab36cf67d8cecf277fb0eeb9" target="_blank"
+              rel="noreferrer">cronoscan contract</a>
+          </li>
+          <li>
+            Worked on IC3D Land metaverse on the Dfinity blockchain platform.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Juego Studio - Trainee Software Engineer -->
+      <div class="experience-container">
+        <h3>
+          <!-- Placeholder logo for Juego Studio -->
+
+          <a href="https://juegostudio.com/" target="_blank" rel="noreferrer">
+            <img src="assets/juego.avif" alt="Juego Studio Logo" />
+          </a>
+          Trainee Software Engineer
+        </h3>
+        <p class="role-details">
+          Juego Studio ~ July 2020 - January 2021
+        </p>
+        <ul class="experience-list">
+          <li>
+            Explored in depth about ReactJS library. And delivered 3+ elegant
+            ReactJS projects.
+          </li>
+          <li>
+            Worked on the development of a highly complex Ionic x React app
+            almost single handedly.
+          </li>
+          <li>
+            Implemented chat feature with Web Socket Protocol with real time
+            reporting of events like typing, profanity filter, and attachment
+            sharing etc.
+          </li>
+          <li>
+            Coordinated with the team to improve the efficiency of a product
+            and delivered it with 75% higher efficiency.
+          </li>
+          <li>
+            Explored React Native as a primary development track, and
+            delivered several projects.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Juego Studio - Software Engineer Intern -->
+      <div class="experience-container">
+        <h3>
+          <!-- Placeholder logo for Juego Studio -->
+          <a href="https://juegostudio.com/" target="_blank" rel="noreferrer">
+            <img src="assets/juego.avif" alt="Juego Studio Logo" />
+          </a>
+          Software Engineer Intern
+        </h3>
+        <p class="role-details">
+          Juego Studio ~ February 2020 - July 2020
+        </p>
+        <ul class="experience-list">
+          <li>
+            Explored in depth about the fundamentals of web development.
+          </li>
+          <li>
+            Experienced first had about the importance of attention to detail
+          </li>
+          <li>
+            Understood the importance and in depth concepts of JavaScript
+          </li>
+          <li>
+            Worked on multiple Internal as well as client projects for web
+            using Angular, Ionic framework and delivered high performance and
+            responsive web applications
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="all-projects">
+      <div class="project-container">
+        <h3>Shared Inference System</h3>
+        <div class="involvement">
+          <span> Problem Identification, </span>
+          <span> Technical Ownership, </span>
+          <span> System Design, </span>
+          <span> Microservices, </span>
+          <span> Implementation </span>
+        </div>
+        <ul class="outcome">
+          <li>
+            Improved performance of LooprAI training and model infrastructure.
+          </li>
+          <li>
+            Reduced model deployment time from 15-20 mins to less than a min.
+          </li>
+          <li>Cost Optimization achieved for non critical deployments.</li>
+        </ul>
+      </div>
+      <div class="project-container">
+        <h3>Pay As You Go - Tracking System</h3>
+        <div class="involvement">
+          <span> Product Analysis, </span>
+          <span>User Research,</span>
+          <span> Configurability, </span>
+          <span> System Design </span>
+        </div>
+        <ul class="outcome">
+          <li>Usage tracking and billing solution design.</li>
+          <li>
+            Designed to track resource utilization per action, per user.
+          </li>
+          <li>Customizable billing and pricing service design.</li>
+        </ul>
+      </div>
+      <div class="project-container">
+        <h3>On Prem - Live Inference Engine</h3>
+        <div class="involvement">
+          <span> Product Ownership, </span>
+          <span> System Design, </span>
+          <span> Tech Lead, </span>
+          <span> Microservices, </span>
+          <span> Failure tolerance, </span>
+          <span> Networking </span>
+        </div>
+        <ul class="outcome">
+          <li>
+            Designed and implemented as system to handle live high throughput,
+            image ingress with realtime inference.
+          </li>
+          <li>
+            Optimized for on prem unreliable or farewelled networks of
+            factories with high failure tolerance.
+          </li>
+        </ul>
+      </div>
+      <div class="project-container">
+        <h3>On Prem - Licensing</h3>
+        <div class="involvement">
+          <span> System Design, </span>
+          <span> Tech Lead, </span>
+          <span> Networking, </span>
+          <span> Signed Certificates </span>
+        </div>
+        <ul class="outcome">
+          <li>
+            Designed a robust licensing system to dynamically revoke access
+            from the customer after product license expires.
+          </li>
+          <li>
+            Works without any network connectivity and without intervention
+            from the company.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-container">
+      <a href="https://www.linkedin.com/in/shashank-h/" target="_blank" rel="noreferrer">
+        <li>
+          <img src="assets/linkedin.svg" alt="Linkedin icon" />
+          shashank-h
+        </li>
+      </a>
+      <a href="https://github.com/shashank-h" target="_blank" rel="noreferrer">
+        <li>
+          <img src="assets/github.svg" alt="Github icon" />
+          shashank-h
+        </li>
+      </a>
+      <a href="mailto:shashankharikripa00@gmail.com" target="_blank" rel="noreferrer">
+        <li>
+          <img src="assets/email.svg" alt="Email icon" />
+          shashankharikripa00@gmail.com
+        </li>
+      </a>
+    </ul>
+  </section>
+</body>
+
 </html>
