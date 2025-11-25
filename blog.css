@@ -1,0 +1,223 @@
+/* Blog Specific Styles */
+
+/* Layout */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+article {
+    width: 100%;
+}
+
+/* Typography */
+article h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+article h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+article h3 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+article p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+article ul, article ol {
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+}
+
+article li {
+    margin-bottom: 0.5rem;
+}
+
+article a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+article a:hover {
+    text-decoration: none;
+}
+
+/* Code Blocks */
+article pre {
+    background-color: rgba(128, 128, 128, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--border-color);
+}
+
+article code {
+    font-family: 'Space Mono', monospace;
+    background-color: rgba(128, 128, 128, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+article pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* Blockquote */
+article blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Meta */
+.blog-meta {
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.blog-meta .date {
+    margin-bottom: 0.5rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background-color: rgba(128, 128, 128, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Blog Index Grid */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.blog-card {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.blog-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.blog-card h3 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.blog-card .date {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card .description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    flex-grow: 1;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.breadcrumbs a:hover {
+    border-bottom-color: currentColor;
+}
+
+.breadcrumbs .separator {
+    opacity: 0.5;
+}
+
+.breadcrumbs .current {
+    opacity: 0.5;
+}
+
+/* Theme Switcher Positioning for Blogs */
+/* We want it absolute top-right, similar to main site but maybe fixed or absolute relative to body */
+.blog-theme-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 1001;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    main {
+        padding: 0 1rem;
+    }
+
+    .blog-theme-toggle {
+        position: fixed;
+        top: auto;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
