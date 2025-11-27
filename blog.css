@@ -1,5 +1,9 @@
 /* Blog Specific Styles */
 
+header {
+    margin-bottom: 1rem;
+}
+
 /* Layout */
 main {
     flex: 1;
@@ -24,7 +28,7 @@ article h2 {
     font-size: 1.8rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
     padding-bottom: 0.5rem;
 }
 
@@ -121,7 +125,8 @@ article blockquote {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-top: 1rem;
+    max-width: 90rem;
+    margin: 1rem auto 0;
 }
 
 .blog-card {
