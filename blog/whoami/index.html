@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="whoami" />
+  <meta property="og:title" content="whoami" />
+  <meta property="og:url" content="https://shashank-h.github.io/portfolio/blog/whoami/" />
+  <meta property="og:type" content="article" />
+  <title>whoami - Shashank H</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../blog.css" />
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCAacgNGs_SXhHA5FAI2GONvbpsX9hTiYI",
+      authDomain: "shashank-portfolio-site.firebaseapp.com",
+      projectId: "shashank-portfolio-site",
+      storageBucket: "shashank-portfolio-site.firebasestorage.app",
+      messagingSenderId: "351249282442",
+      appId: "1:351249282442:web:dc0b2ce97467afa40d8473",
+      measurementId: "G-FELVS32KZZ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav class="breadcrumbs">
+      <a href="../../">Home</a>
+      <span class="separator">/</span>
+      <a href="../">Blog</a>
+      <span class="separator">/</span>
+      <span class="current">whoami</span>
+    </nav>
+
+    <button id="theme-toggle" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" class="theme-toggle-btn blog-theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+        <path
+        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.109 0-1.422 1.153-2.578 2.578-2.578 3.069 0 5.439-2.438 5.439-5.438 0-4.562-3.687-8.062-8.79-8.062z">
+        </path>
+    </svg>
+    </button>
+    <div id="theme-menu-overlay" class="theme-menu-overlay" aria-hidden="true"></div>
+    <div id="theme-menu" class="theme-menu" role="menu" aria-hidden="true">
+    <!-- Content injected by JS -->
+    </div>
+    <script src="../../theme.js"></script>
+  </header>
+
+  <main>
+    <article>
+      <h1><span>$</span>whoami</h1>
+      <div class="blog-meta">
+        <p class="date">November 26, 2025</p>
+        <div class="tags">
+          <span>About</span> <span>Personal</span> <span>Thoughts</span>
+        </div>
+      </div>
+      <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--border-color); opacity: 0.5;">
+      
+      <div class="blog-content">
+        <!-- Content goes here -->
+        <p>Hi, I'm Shashank Harikripa, an Obsessive Engineer who loves to solve problems.
+          <br>
+          <br>
+          For last few days I have been thinking about how to showcase my work and my thoughts to the world. Which I've never done before.
+          Which is why I've built this blog, where I will update my thoughts and my work. Not just to show my work, but also as a journal for myself..
+        </p>
+
+        <h3>About Me</h3>
+        <p>
+          I am an engineer, not just by profession but also by passion. I love to learn, build/break things and solve problems.
+          <br>
+          So, let me introduce myself by saying,
+          <br>
+          <br>
+          <code style="margin: 0 1rem;">
+            print("Hello World")
+          </code>
+        </p>
+      </div>
+    </article>
+  </main>
+</body>
+
+</html>

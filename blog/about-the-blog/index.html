@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About the blog" />
+  <meta property="og:title" content="About the blog" />
+  <meta property="og:url" content="https://shashank-h.github.io/portfolio/blog/about-the-blog/" />
+  <meta property="og:type" content="article" />
+  <title>About the blog - Shashank H</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../blog.css" />
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCAacgNGs_SXhHA5FAI2GONvbpsX9hTiYI",
+      authDomain: "shashank-portfolio-site.firebaseapp.com",
+      projectId: "shashank-portfolio-site",
+      storageBucket: "shashank-portfolio-site.firebasestorage.app",
+      messagingSenderId: "351249282442",
+      appId: "1:351249282442:web:dc0b2ce97467afa40d8473",
+      measurementId: "G-FELVS32KZZ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav class="breadcrumbs">
+      <a href="../../">Home</a>
+      <span class="separator">/</span>
+      <a href="../">Blog</a>
+      <span class="separator">/</span>
+      <span class="current">About the blog</span>
+    </nav>
+
+    <button id="theme-toggle" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" class="theme-toggle-btn blog-theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+        <path
+        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.109 0-1.422 1.153-2.578 2.578-2.578 3.069 0 5.439-2.438 5.439-5.438 0-4.562-3.687-8.062-8.79-8.062z">
+        </path>
+    </svg>
+    </button>
+    <div id="theme-menu-overlay" class="theme-menu-overlay" aria-hidden="true"></div>
+    <div id="theme-menu" class="theme-menu" role="menu" aria-hidden="true">
+    <!-- Content injected by JS -->
+    </div>
+    <script src="../../theme.js"></script>
+  </header>
+
+  <main>
+    <article>
+      <h1>About the blog</h1>
+      <div class="blog-meta">
+        <p class="date">November 27, 2025</p>
+        <div class="tags">
+          <span>Technology</span> <span>HTML</span> <span>Web</span> <span>Frontend</span>
+        </div>
+      </div>
+      <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--border-color); opacity: 0.5;">
+      
+      <div class="blog-content">
+        <!-- Content goes here -->
+         <p>
+          Almost 2 years ago I bought 2 domains <a href="http://nirmatr.in" target="_blank">nirmatr.in</a> and <a href="http://nirmaker.com" target="_blank">nirmaker.com</a>.
+          <br>
+          <br>
+          <span class="bold">Nirmatr</span> - Sanskrit - Means Maker or Creator
+          <br>
+          <span class="bold">Nirmaker</span> - Doesnt mean anything, but I thought of it as a cool wordplay on the Sanskrit word and the English word "Maker". <span class="bigger">;p</span>
+         
+        </p>
+        <p>
+         Initially I vibecoded a portfolio site with deep purples and crazy animations. It was deployed here for a while.
+         <br>
+         <span class="bold">Side note:</span> I have also deployed a personal <a href="http://immich.app" target="_blank">Immich</a> server (Self hosted google photos alternative) on a subdomain hosted on my raspberry pi at home.
+         More on this in a future blog post...
+          <br>
+          <br>
+          After some time of having that flashy site, I realized that I didn't like it very much and decided to redo the portfolio site.
+          I created the asthetic completely by myself using CSS and HTML. I filled all the details as per my <a href="http://linkedin.com/in/shashank-h" target="_blank" rel="noopener noreferrer">LinkedIn</a> profile.
+          Made sure it's printable by default, and woah is it beautiful.
+          I decided I won't use any resume builders as I can just write html and print it.
+        </p>
+        <p>
+          Once I created the portfolio site, I liked the asthetic so much that I decided to create this blog, using just basic HTML and CSS and a sprinkle of JS.
+          <br>
+          <span class="bold">PS:</span> I also created a theme switcher with a little help from my AI friend.
+        </p>
+        <h3>How it works</h3>
+        <ol>
+          <li>
+            It all runs on a master <code>blog_template.html</code> file. This defines the structure for every post, with variables like <code>{{TITLE}}</code> waiting to be swapped out.
+          </li>
+
+          <li>
+            A bash script, <code>createblog.sh</code>, drives the whole thing. You just give it a title, and it handles the rest.
+          </li>
+
+          <li>
+            First, it generates a clean URL slug from the title using regex—handling things like spaces and special characters automatically.
+          </li>
+
+          <li>
+            Then, it creates the folder structure and uses <code>sed</code> to generate the final <code>index.html</code> from the template, filling in the details.
+          </li>
+
+          <li>
+            It even updates the main <code>blog/index.html</code> listing page, injecting the new post entry automatically so it shows up on the site immediately.
+          </li>
+        </ol>
+
+        <p>
+          This setup makes life a lot easier:
+        </p>
+        <ul>
+          <li>
+            <span class="bold">It keeps things consistent.</span> Every post looks right and has the correct meta tags without me having to double-check.
+          </li>
+          <li>
+            <span class="bold">It's fast.</span> I can spin up a new post environment in seconds and start writing immediately, instead of fiddling with files and folders.
+          </li>
+          <li>
+            <span class="bold">It removes friction.</span> The less administrative work I have to do, the more likely I am to actually write something.
+          </li>
+        </ul>
+      </div>
+    </article>
+  </main>
+</body>
+
+</html>
