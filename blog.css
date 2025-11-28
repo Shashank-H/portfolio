@@ -210,6 +210,14 @@ article blockquote {
     z-index: 1001;
 }
 
+span.bold {
+    font-weight: bold;
+}
+
+span.bigger {
+    font-size: 1.1rem;
+}
+
 @media screen and (max-width: 768px) {
     .blog-grid {
         grid-template-columns: 1fr;
