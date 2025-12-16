@@ -12,35 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyCAacgNGs_SXhHA5FAI2GONvbpsX9hTiYI",
-      authDomain: "shashank-portfolio-site.firebaseapp.com",
-      projectId: "shashank-portfolio-site",
-      storageBucket: "shashank-portfolio-site.firebasestorage.app",
-      messagingSenderId: "351249282442",
-      appId: "1:351249282442:web:dc0b2ce97467afa40d8473",
-      measurementId: "G-FELVS32KZZ"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-
-    // Make logResumeDownload function available globally
-    window.logResumeDownload = function () {
-      logEvent(analytics, 'resume_download');
-    };
-
-  </script>
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <!-- <script type="module">
+    import { logResumeDownload } from "./firebase.js";
+    window.logResumeDownload = logResumeDownload;
+  </script> -->
+  <script type="module" src="./firebase.js"></script>
 </head>
 
 <body>
