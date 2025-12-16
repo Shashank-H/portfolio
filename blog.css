@@ -138,6 +138,18 @@ article blockquote {
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative; /* For stretched link */
+}
+
+/* Stretched Link for Clickable Card */
+.blog-card h3 a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .blog-card:hover {
@@ -233,4 +245,57 @@ span.bigger {
         bottom: 2rem;
         right: 2rem;
     }
+}
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding-bottom: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.footer-content {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Author Signature */
+.author-signature {
+    margin-top: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--text-color);
+    text-align: right;
 }
