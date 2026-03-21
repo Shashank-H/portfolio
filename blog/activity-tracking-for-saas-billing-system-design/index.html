@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Activity Tracking for SAAS Billing: System design" />
+  <meta property="og:title" content="Activity Tracking for SAAS Billing: System design" />
+  <meta property="og:url" content="https://shashank-h.github.io/portfolio/blog/activity-tracking-for-saas-billing-system-design/" />
+  <meta property="og:type" content="article" />
+  <title>Activity Tracking for SAAS Billing: System design - Shashank H</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../blog.css" />
+  <script type="module">
+    import { analytics } from "../../firebase.js";
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav class="breadcrumbs">
+      <a href="../../">Home</a>
+      <span class="separator">/</span>
+      <a href="../">Blog</a>
+      <span class="separator">/</span>
+      <span class="current">Activity Tracking for SAAS Billing: System design</span>
+    </nav>
+
+    <button id="theme-toggle" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" class="theme-toggle-btn blog-theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+        <path
+        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.109 0-1.422 1.153-2.578 2.578-2.578 3.069 0 5.439-2.438 5.439-5.438 0-4.562-3.687-8.062-8.79-8.062z">
+        </path>
+    </svg>
+    </button>
+    <div id="theme-menu-overlay" class="theme-menu-overlay" aria-hidden="true"></div>
+    <div id="theme-menu" class="theme-menu" role="menu" aria-hidden="true">
+    <!-- Content injected by JS -->
+    </div>
+    <script src="../../theme.js"></script>
+  </header>
+
+  <main>
+    <article>
+      <h1>Activity Tracking for SAAS Billing: System design</h1>
+      <div class="blog-meta">
+        <p class="date">December 16, 2025</p>
+        <div class="tags">
+          <span>System Design</span> <span>SAAS</span> <span>Microservices</span> <span>Event Driven Architecture</span>
+          <span>Billing</span> <span>Activity Tracking</span>
+        </div>
+      </div>
+      <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--border-color); opacity: 0.5;">
+      
+      <div class="blog-content">
+        <!-- Content goes here -->
+        <p>
+          SAAS billing as per user activity, for LooprAI platform - Refer: <a href="https://web.archive.org/web/20230131144018/https://www.loopr.ai/" target="_blank">LooprAI (Jan31, 2023)</a>
+        </p>
+
+        <h3>Background</h3>
+        <p>
+          When LooprAI started getting customers, we realized we had no way to track user activities for billing. The pricing was pay-as-you-go, and we weren't sure if we'd use invoices or credits.
+          <br><br>
+          I needed to design a flexible system that could handle both models and scale with the platform.
+        </p>
+
+        <h3>The Core Idea</h3>
+        <p>
+          Simple: <span class="bold">track every action</span>. Then decide whether to allow it, restrict it, or deduct <span class="bold">∞ Token</span> (credits).
+          <br><br>
+          Beyond billing, this gave us usage metrics. We could hook in Metabase for dashboards and show customers their usage patterns - helping them optimize costs too.
+        </p>
+
+        <h3>Design Goals</h3>
+        <ul>
+          <li><span class="bold">Platform-agnostic:</span> Any system can integrate via API</li>
+          <li><span class="bold">Flexible pricing:</span> Support unlimited tiers, actions, and pricing models</li>
+          <li><span class="bold">Hybrid billing:</span> Handle both subscription and credit-based models</li>
+          <li><span class="bold">Time-based charges:</span> Bill for instant tasks (API calls) and long-running activities (model training)</li>
+          <li><span class="bold">Custom enterprise tiers:</span> Sales can create custom pricing on the fly</li>
+        </ul>
+
+        <h3>Microservices Architecture</h3>
+        <p>
+          The billing system is a standalone microservice. Every other service calls it before executing actions. Here's how it works - when a user initiates an action, System A notifies billing. For activities that need System B to complete the work, System B notifies billing when done.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+          <img src="billing-system-design.png" alt="Billing System Architecture" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; background: var(--card-bg);" />
+        </div>
+
+        <p>
+          <span class="bold">The Flow:</span>
+        </p>
+        <p>
+          1. User initiates an action (task or activity) through System A
+          <br><br>
+          2. System A notifies Billing with action details. Billing returns an <code>action_id</code> and approves/rejects based on credits
+          <br><br>
+          3. If System A needs System B to do work, it passes the <code>action_id</code> to System B
+          <br><br>
+          4. System B completes (or fails) and notifies Billing with the <code>action_id</code>
+          <br><br>
+          5. Billing records everything: time elapsed for activities, tokens/free action count deducted, and failure reasons if any
+          <br><br>
+          This pattern handles both instant tasks (API calls) and long-running activities (model training). Billing tracks the complete lifecycle regardless of which system actually does the work.
+        </p>
+
+        <h3>The Data Model</h3>
+        <p>
+          Six core tables power the entire system:
+        </p>
+
+        <h4>1. Tiers</h4>
+        <p>
+          Defines subscription tiers (Free, Pro, Enterprise, etc.) with name, price, and currency. The <code>buy_credits</code> flag distinguishes monthly subscriptions from one-time credit purchases.
+        </p>
+
+        <h4>2. CreditBalances</h4>
+        <p>
+          Tracks credits per workspace. Credits can expire (with a timestamp) or last forever (<code>000000</code> = epoch time).
+        </p>
+
+        <h4>3. Actions</h4>
+        <p>
+          Every platform action (train model, run inference, deploy, etc.) is defined here. Two types:
+        </p>
+        <ul>
+          <li><span class="bold">"task"</span> - Instant actions (API calls)</li>
+          <li><span class="bold">"activity"</span> - Time-based actions (model training)</li>
+        </ul>
+
+        <h4>4. ActionCosts</h4>
+        <p>
+          Maps <code>tier_id</code> + <code>action_id</code> to cost. The magic happens here:
+        </p>
+        <ul>
+          <li>Tasks: flat cost per execution</li>
+          <li>Activities: <code>activity_cost_every</code> (milliseconds) defines billing intervals - e.g., "2 credits per 10 minutes"</li>
+          <li><code>free_count</code>: N free actions before charging, or <code>-1</code> for unlimited</li>
+        </ul>
+        <p>
+          This handles "500 free inferences/month", "unlimited training", or "pay per use" - all with the same model.
+        </p>
+
+        <h4>5. FreeActionBalances</h4>
+        <p>
+          Tracks remaining free action quotas per workspace. Once exhausted, credits get deducted.
+        </p>
+
+        <h4>6. PerformedActions</h4>
+        <p>
+          The audit log. Every action gets logged with: workspace, user, action, timestamps, duration, free/paid status, and outcome.
+          <br><br>
+          Used for billing, analytics, customer reports, and debugging.
+        </p>
+
+        <h3>Key Design Decisions</h3>
+
+        <p>
+          <span class="bold">1. Task vs Activity</span> - API calls get charged per execution, model training gets charged by time. Different actions, different billing.
+        </p>
+
+        <p>
+          <span class="bold">2. Per-tier costs</span> - Every tier has its own pricing for each action. Enterprise customers can have completely custom rates without touching code.
+        </p>
+
+        <p>
+          <span class="bold">3. The free_count trick</span> - Use <code>-1</code> for unlimited, positive integers for quotas. One column handles "500 free API calls" and "unlimited training" equally.
+        </p>
+
+        <p>
+          <span class="bold">4. Credit expiry</span> - Promo credits can expire, purchased credits can last forever. One timestamp field handles both.
+        </p>
+
+        <h3>What I'd Do Differently</h3>
+        <ul>
+          <li>Add support somehow for async billing - non blocking</li>
+          <li>Pre-emptive activity rejection - estimate cost before starting activity and reject if user doesn't have enough credits</li>
+        </ul>
+
+        <h3>Lessons Learned</h3>
+        <ul>
+          <li><span class="bold">Start with the data model.</span> Get the tables right, everything else follows.</li>
+          <li><span class="bold">Flexibility = good abstractions.</span> The tier-action-cost relationship supported wildly different pricing without code changes.</li>
+          <li><span class="bold">Design for observability.</span> Usage metrics and customer reports weren't afterthoughts - they were part of the initial design.</li>
+          <li><span class="bold">Keep it simple.</span> Track actions, deduct credits. That's it.</li>
+        </ul>
+
+        <p>
+          If you're building usage-based billing, make it flexible enough to handle whatever sales and product throw at it. Because they will.
+        </p>
+
+        <p class="author-signature">Author: Shashank</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> Shashank H. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="../../">Home</a>
+        <a href="https://linkedin.com/in/shashank-h" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/shashank-h" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
