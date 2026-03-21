@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Activity Tracking for SAAS Billing: System design" />
   <meta property="og:title" content="Activity Tracking for SAAS Billing: System design" />
-  <meta property="og:url" content="https://shashank-h.github.io/portfolio/blog/activity-tracking-for-saas-billing-system-design/" />
+  <meta property="og:url" content="https://shashank.nirmaker.com/blog/activity-tracking-for-saas-billing-system-design/" />
+  <meta property="og:image" content="https://shashank.nirmaker.com/blog/activity-tracking-for-saas-billing-system-design/banner-og.png" />
   <meta property="og:type" content="article" />
   <title>Activity Tracking for SAAS Billing: System design - Shashank H</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,6 +19,7 @@
   <script type="module">
     import { analytics } from "../../firebase.js";
   </script>
+  <script src="../../theme-banner.js"></script>
 </head>
 
 <body>
@@ -49,6 +51,10 @@
     <script src="../../theme.js"></script>
   </header>
 
+  <div class="blog-banner">
+    <img src="banner.svg" alt="Activity Tracking for SAAS Billing: System design banner" />
+  </div>
+
   <main>
     <article>
       <h1>Activity Tracking for SAAS Billing: System design</h1>
@@ -76,7 +82,7 @@
 
         <h3>The Core Idea</h3>
         <p>
-          Simple: <span class="bold">track every action</span>. Then decide whether to allow it, restrict it, or deduct <span class="bold">∞ Token</span> (credits).
+          Simple: <span class="bold">track every action</span>. Then decide whether to allow it, restrict it, or deduct credits.
           <br><br>
           Beyond billing, this gave us usage metrics. We could hook in Metabase for dashboards and show customers their usage patterns - helping them optimize costs too.
         </p>

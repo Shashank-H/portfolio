@@ -43,7 +43,8 @@ TAGS="<span>Tag1</span> <span>Tag2</span> <span>Tag3</span>"
 # We use a temporary file to handle the replacements safely
 sed -e "s/{{TITLE}}/$TITLE/g" \
     -e "s/{{OG_TITLE}}/$TITLE/g" \
-    -e "s|{{OG_URL}}|https://shashank-h.github.io/portfolio/blog/$SLUG/|g" \
+    -e "s|{{OG_URL}}|https://shashank.nirmaker.com/blog/$SLUG/|g" \
+    -e "s|{{OG_IMAGE_PNG}}|https://shashank.nirmaker.com/blog/$SLUG/banner-og.png|g" \
     -e "s/{{DATE}}/$DATE/g" \
     -e "s|{{TAGS}}|$TAGS|g" \
     "$TEMPLATE" > "$FILENAME"
