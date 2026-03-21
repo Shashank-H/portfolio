@@ -1,0 +1,51 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: var(--bg-color, #0f0f0f); }
+    .primary { fill: none; stroke: var(--accent-color, #ffffff); stroke-width: 2; }
+    .secondary { fill: none; stroke: var(--accent-color, #ffffff); stroke-width: 1; stroke-dasharray: 4,4; opacity: 0.6; }
+    .accent { fill: var(--accent-color, #ffffff); opacity: 0.2; }
+    .text { fill: var(--text-color, #ffffff); font-family: 'Space Mono', monospace; font-size: 14px; }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="400"/>
+
+  <!-- Microservices Architecture Nodes -->
+  <!-- System A -->
+  <rect class="primary" x="100" y="150" width="120" height="100" rx="4"/>
+  <text class="text" x="160" y="205" text-anchor="middle">System A</text>
+
+  <!-- Billing Service -->
+  <rect class="primary" x="540" y="150" width="120" height="100" rx="4"/>
+  <text class="text" x="600" y="195" text-anchor="middle">Billing</text>
+  <text class="text" x="600" y="215" text-anchor="middle">Service</text>
+
+  <!-- System B -->
+  <rect class="primary" x="980" y="150" width="120" height="100" rx="4"/>
+  <text class="text" x="1040" y="205" text-anchor="middle">System B</text>
+
+  <!-- Data Flow Lines -->
+  <path class="primary" d="M 220 200 L 540 200"/>
+  <path class="primary" d="M 660 200 L 980 200"/>
+  <path class="secondary" d="M 220 180 L 540 180"/>
+  <path class="secondary" d="M 660 220 L 980 220"/>
+
+  <!-- Action ID badges -->
+  <circle class="accent" cx="380" cy="200" r="30"/>
+  <text class="text" x="380" y="205" text-anchor="middle" font-size="10">action_id</text>
+
+  <circle class="accent" cx="820" cy="200" r="30"/>
+  <text class="text" x="820" y="205" text-anchor="middle" font-size="10">complete</text>
+
+  <!-- Credits representation -->
+  <g transform="translate(540, 280)">
+    <circle class="primary" cx="20" cy="20" r="15"/>
+    <circle class="primary" cx="50" cy="20" r="15"/>
+    <circle class="primary" cx="80" cy="20" r="15"/>
+    <text class="text" x="50" y="55" text-anchor="middle" font-size="12">Credits</text>
+  </g>
+
+  <!-- Activity Tracking Indicator -->
+  <rect class="accent" x="480" y="60" width="240" height="40" rx="4"/>
+  <text class="text" x="600" y="85" text-anchor="middle" font-weight="bold">Activity Tracking</text>
+</svg>
