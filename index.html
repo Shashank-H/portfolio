@@ -23,7 +23,7 @@
 <body>
   <header>
     <h1>Shashank Harikripa</h1>
-    <h5>Generalist Engineer | Full Stack | AI | System Design</h5>
+    <h5>Generalist Engineer | Full Stack | AI | System Design | <span id="years-experience"></span> Years Experience</h5>
     <nav>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -56,6 +56,16 @@
       </ul>
     </nav>
     <script src="theme.js"></script>
+    <script>
+      // Calculate years of experience from first job start date
+      (function() {
+        const startDate = new Date('2020-02-01');
+        const currentDate = new Date();
+        const diffMs = currentDate - startDate;
+        const years = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 365.25));
+        document.getElementById('years-experience').textContent = years + '+';
+      })();
+    </script>
     <section id="header-contact">
       <ul class="contact-container">
         <a href="https://www.linkedin.com/in/shashank-h/" target="_blank" rel="noreferrer">
@@ -219,6 +229,17 @@
             features are extremely flexible just by updating config files, and
             could be deployed to any use case just by updating the config
             file.
+          </li>
+          <li>
+            Architected full multitenancy for LooprIQ, migrating configurations
+            from filesystem to database, enabling concurrent runs for multiple
+            users and workspaces for isolated environments. Designed hybrid
+            deployment supporting both on-prem and cloud (app.loopr.ai).
+          </li>
+          <li>
+            Optimized build pipeline with multi-stage Docker builds, reducing
+            build time from 10 minutes to 3 minutes (70% improvement) and
+            significantly decreased final image size, lowering CI/CD costs.
           </li>
           <li>
             Designed On-prem licensing of LooprIQ products in offline setting
@@ -413,6 +434,35 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="all-projects">
+      <div class="project-container">
+        <h3>LooprIQ Edge + Cloud</h3>
+        <div class="involvement">
+          <span> Product Ownership, </span>
+          <span> System Design, </span>
+          <span> Tech Lead, </span>
+          <span> Microservices, </span>
+          <span> Edge Computing, </span>
+          <span> Team Leadership, </span>
+          <span> Full Stack </span>
+        </div>
+        <ul class="outcome">
+          <li>
+            Lead implementation of LooprIQ Edge products (Inspect & Verify) from scratch with team of 5.
+          </li>
+          <li>
+            Built live AI inference engine for defect detection on edge devices with high failure tolerance.
+          </li>
+          <li>
+            Designed highly flexible, config-driven architecture deployable to any use case.
+          </li>
+          <li>
+            Architected microservices for real-time video processing with limited edge resources.
+          </li>
+          <li>
+            Scaled product from on-prem only to hybrid edge-cloud platform with full multitenancy support.
+          </li>
+        </ul>
+      </div>
       <div class="project-container">
         <h3>Shared Inference System</h3>
         <div class="involvement">
