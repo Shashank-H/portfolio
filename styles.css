@@ -116,6 +116,15 @@ header {
     margin-bottom: 2rem;
 }
 
+header h5 {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    opacity: 0.85;
+    letter-spacing: 0.02em;
+}
+
 header nav {
     margin-top: 0.5rem;
 }
@@ -306,6 +315,16 @@ section {
         color-scheme: light !important;
     }
 
+    html,
+    body {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    body {
+        display: block !important;
+    }
+
     header nav {
         display: none;
     }
@@ -325,6 +344,10 @@ section {
     }
 
     #contact {
+        display: none;
+    }
+
+    .theme-toggle-btn {
         display: none;
     }
 }
