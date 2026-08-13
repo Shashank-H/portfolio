@@ -264,7 +264,8 @@ section > p { max-width: 65ch; color: var(--text-secondary); }
   }
   html, body { height: auto !important; overflow: visible !important; }
   body { display: block !important; font-size: 12px; }
-  @page { margin: 12mm; }
+  /* A4-friendly safe area: preserves a clean physical margin in browser print/PDF output. */
+  @page { size: A4 portrait; margin: 14mm 12mm; }
   .site-header, section { width: 100%; margin-inline: 0; }
   .site-header { display: block; padding: 0 0 .75rem; border-bottom: 0; }
   .identity-block { max-width: none; }
