@@ -9,7 +9,7 @@
   <title>Shashank H - Generalist Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -21,9 +21,14 @@
 </head>
 
 <body>
-  <header>
-    <h1>Shashank Harikripa</h1>
-    <h5>Generalist Engineer | Full Stack | AI | System Design | <span id="years-experience"></span> Years Experience</h5>
+  <header class="site-header">
+    <div class="identity-block">
+      <p class="kicker">Portfolio / 2025</p>
+      <h1>Shashank<br />Harikripa</h1>
+      <p class="hero-summary">Generalist engineer for resilient, high-leverage product systems.</p>
+    </div>
+    <div class="experience-stamp">Full Stack · AI · System Design<br /><span id="years-experience"></span> years building in startups</div>
+    <h5 class="sr-only">Generalist Engineer | Full Stack | AI | System Design | <span id="years-experience-accessible"></span> Years Experience</h5>
     <nav>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -64,6 +69,7 @@
         const diffMs = currentDate - startDate;
         const years = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 365.25));
         document.getElementById('years-experience').textContent = years + '+';
+        document.getElementById('years-experience-accessible').textContent = years + '+';
       })();
     </script>
     <section id="header-contact">
