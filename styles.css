@@ -183,7 +183,7 @@ section h2 {
   font-size: clamp(1.8rem, 3.4vw, 3rem); font-weight: 700; letter-spacing: -.07em; line-height: 1.05;
 }
 section h2::before { content: "//"; color: var(--accent); font-size: .6875rem; letter-spacing: .1em; }
-section > p { max-width: 65ch; color: var(--text-secondary); }
+section > p { color: var(--text-secondary); }
 #about { display: grid; grid-template-columns: minmax(170px, .55fr) minmax(0, 1.45fr); column-gap: clamp(2rem, 8vw, 8rem); }
 #about h2 { grid-column: 1; }
 #about p { grid-column: 2; margin: 0; font-size: clamp(1rem, 1.4vw, 1.15rem); }
@@ -249,10 +249,49 @@ section > p { max-width: 65ch; color: var(--text-secondary); }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
 @media print {
-  :root, [data-theme] { --background: #fff !important; --foreground: #000 !important; --surface: #fff !important; --surface-subtle: #fff !important; --text-secondary: #000 !important; --text-muted: #333 !important; --rule: #777 !important; }
-  body { font-size: 11px; }
-  .site-header, section { width: 100%; }
-  header nav, .theme-toggle-btn, .theme-menu, #contact { display: none !important; }
+  :root, [data-theme] {
+    color-scheme: light !important;
+    --background: #fff !important;
+    --foreground: #000 !important;
+    --surface: #fff !important;
+    --surface-subtle: #fff !important;
+    --text-secondary: #000 !important;
+    --text-muted: #333 !important;
+    --rule: #000 !important;
+    --accent: #000 !important;
+    --selection: #fff !important;
+    --selection-text: #000 !important;
+  }
+  html, body { height: auto !important; overflow: visible !important; }
+  body { display: block !important; font-size: 12px; }
+  /* A4-friendly safe area: preserves a clean physical margin in browser print/PDF output. */
+  @page { size: A4 portrait; margin: 14mm 12mm; }
+  .site-header, section { width: 100%; margin-inline: 0; }
+  .site-header { display: block; padding: 0 0 .75rem; border-bottom: 0; }
+  .identity-block { max-width: none; }
+  .kicker, .experience-stamp, .hero-summary, section h2::before { display: none; }
+  h1 { margin: 0; font-size: 24pt; line-height: 1; }
+  section { padding: .85rem 0; border-bottom: 0; }
+  section h2 { display: block; margin: 0 0 .45rem; font-size: 14pt; }
+  #about { display: block; }
+  #about p { font-size: 11px; }
+  header nav, .theme-toggle-btn, .theme-menu, .theme-menu-overlay, #contact { display: none !important; }
   #header-contact { display: block; }
-  .all-experiences, .skill-container ul { grid-template-columns: repeat(2, 1fr); }
+  .all-experiences, .all-projects { grid-template-columns: 1fr; gap: .35rem; }
+  .skill-container { margin-top: .5rem; }
+  .skill-container ul { display: block; columns: 3; column-gap: 1.25rem; }
+  .skill-container li {
+    display: block; min-height: 0; margin: 0; padding: .16rem 0;
+    border: 0; background: transparent; font-size: 8px; break-inside: avoid;
+  }
+  .skill-container li::before { content: "— "; }
+  .skill-container li img { display: none; }
+  .experience-container, .project-container, .skill-container li { break-inside: avoid; page-break-inside: avoid; }
+  .experience-container, .project-container { margin: 0; padding: .7rem; border-color: #999; }
+  .experience-container h3, .project-container h3 { margin-bottom: .35rem; font-size: 12px; }
+  .experience-container h3 img { width: 34px; height: 20px; }
+  .role-details, .involvement { margin-bottom: .5rem; font-size: 7px; }
+  .experience-list, .outcome { font-size: 10px; }
+  .experience-list li, .outcome li { margin-bottom: .25rem; }
+  a { color: #000 !important; }
 }
