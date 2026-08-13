@@ -32,16 +32,27 @@ Use semantic tokens rather than hard-coding colors in components.
 
 | Token | Value | Use |
 |---|---:|---|
-| `--background` | `#24221F` | Page background |
+| `--background` | `#1F1E1C` | Page background |
 | `--foreground` | `#F2F8FC` | Primary text, borders, active controls |
-| `--surface` | `#302D28` | Secondary panels and muted surfaces |
-| `--surface-subtle` | `#2A2824` | Softer inset surfaces |
+| `--surface` | `#2B2925` | Secondary panels and muted surfaces |
+| `--surface-subtle` | `#24221F` | Softer inset surfaces and cards |
 | `--text-secondary` | `rgba(242, 248, 252, 0.76)` | Body and supporting copy |
 | `--text-muted` | `rgba(242, 248, 252, 0.68)` | Metadata and tertiary labels |
 | `--rule` | `#82796D` | Subordinate dividers |
 | `--accent` | `#D1B46A` | Rare, restrained emphasis |
 | `--selection` | `#F2F8FC` | Selected and inverted states |
-| `--selection-text` | `#24221F` | Text on selected states |
+| `--selection-text` | `#1F1E1C` | Text on selected states |
+
+### Theme variants
+
+The shared theme picker persists a selection in `localStorage` and is used on both the portfolio and blog. It exposes **System**, **Light**, **Dark**, **Ocean**, **Forest**, **Cyber**, and **Coffee**. Every theme defines the same semantic token set; components must never introduce theme-specific geometry.
+
+| Theme | Background | Accent |
+|---|---:|---:|
+| Ocean | `#1F2224` | `#6AAED1` |
+| Forest | `#20241F` | `#8BD16A` |
+| Cyber | `#241F23` | `#D16ABC` |
+| Coffee | `#FCF6F2` | `#D1956A` |
 
 ### Color rules
 
@@ -85,8 +96,9 @@ The contrast between a rigid monospaced interface voice and readable sans-serif 
 
 ## 4. Layout and Spacing
 
-- Use a centered content frame with responsive gutters; `24px` is a useful large-screen baseline.
-- Prefer a strict grid with consistent columns, rows, and one-pixel gaps where appropriate.
+- Use a centered content frame with responsive gutters: `24px` on desktop and `16px` on small screens.
+- Portfolio content uses a maximum frame of `1320px`; blog content uses its own readable article frame.
+- Prefer a strict grid with consistent columns, rows, and intentional card gaps rather than collapsed borders.
 - Use whitespace and alignment to establish hierarchy.
 - Let borders and section rules define structure instead of nested cards and shadows.
 - Use `clamp()` for fluid display sizes and responsive spacing.
@@ -104,8 +116,11 @@ The contrast between a rigid monospaced interface voice and readable sans-serif 
 - Avoid floating containers, card stacks, heavy shadows, and pill-heavy interfaces.
 - Component variants should change tokens, borders, or inversion—not introduce unrelated visual styles.
 
-### Buttons and controls
+### Navigation, buttons, and controls
 
+- Portfolio navigation is a compact inline row of small, square outlined-on-hover links; do not use long horizontal rules around individual nav links.
+- The theme selector is a fixed bottom-right `48×48px` palette button. Its picker opens above it as a square, three-column swatch grid.
+- Use this same floating theme control and picker behavior on portfolio and blog pages.
 - Primary controls use an inverted fill with background-colored text.
 - Secondary controls use a transparent background with foreground text.
 - Include visible hover, active, focus, and disabled states.
@@ -121,8 +136,10 @@ The contrast between a rigid monospaced interface voice and readable sans-serif 
 
 ### Panels and cards
 
-- Treat cards as grid cells or grouped content, not floating objects.
-- Use surface tokens to establish subtle contrast.
+- Treat cards as grouped content, not floating objects. Preserve the established two-column experience/project grids on desktop and stack them on small screens.
+- Cards use `--surface-subtle`, a crisp `1px` `--rule` border, square corners, and responsive padding (`clamp(1.25rem, 2.5vw, 2rem)`).
+- Blog listing cards follow the same square-corner treatment.
+- Use surface tokens to establish subtle contrast; no shadows or special first-card color treatment.
 - Keep internal padding consistent and responsive.
 - Do not nest cards inside cards unless the information hierarchy genuinely requires it.
 - Use imagery sparingly and keep its treatment consistent with the overall palette.
@@ -172,7 +189,7 @@ The contrast between a rigid monospaced interface voice and readable sans-serif 
 - Gradients, neon, bloom, and outer glows.
 - Floating glass navigation or excessive blur.
 - Conventional drop-shadow-heavy surfaces.
-- Rounded card stacks and pill-heavy tag systems.
+- Rounded card stacks and pill-heavy tag systems. Blog, portfolio, and theme-picker cards are square.
 - Generic three-card marketing layouts.
 - Decorative emoji or custom cursors.
 - Overlapping copy, fragile absolute positioning, or unexplained ornament.
@@ -185,5 +202,6 @@ The contrast between a rigid monospaced interface voice and readable sans-serif 
 2. Define semantic color tokens for each theme.
 3. Establish the spacing, type, border, and responsive primitives.
 4. Build components with square geometry, clear states, and shared tokens.
-5. Verify keyboard focus, contrast, touch targets, and reduced motion.
-6. Test representative viewport sizes and confirm there is no horizontal overflow.
+5. Ensure the floating theme picker is present and consistent across portfolio and blog templates.
+6. Verify keyboard focus, contrast, touch targets, and reduced motion.
+7. Test representative viewport sizes and confirm there is no horizontal overflow.
