@@ -264,12 +264,29 @@ section > p { max-width: 65ch; color: var(--text-secondary); }
   }
   html, body { height: auto !important; overflow: visible !important; }
   body { display: block !important; font-size: 12px; }
-  .site-header, section { width: 100%; }
+  @page { margin: 12mm; }
+  .site-header, section { width: 100%; margin-inline: 0; }
+  .site-header { display: block; padding: 0 0 .75rem; border-bottom: 0; }
+  .identity-block { max-width: none; }
+  .kicker, .experience-stamp, .hero-summary, section h2::before { display: none; }
+  h1 { margin: 0; font-size: 28pt; line-height: 1; }
+  section { padding: .85rem 0; border-bottom: 0; }
+  section h2 { display: block; margin: 0 0 .45rem; font-size: 16pt; }
+  #about { display: block; }
+  #about p { font-size: 11px; }
   header nav, .theme-toggle-btn, .theme-menu, .theme-menu-overlay, #contact { display: none !important; }
   #header-contact { display: block; }
-  .all-experiences, .all-projects { grid-template-columns: 1fr; gap: .5rem; }
-  .skill-container ul { grid-template-columns: repeat(2, 1fr); }
+  .all-experiences, .all-projects { grid-template-columns: 1fr; gap: .35rem; }
+  .skill-container { margin-top: .5rem; }
+  .skill-container ul { grid-template-columns: repeat(3, 1fr); }
+  .skill-container li { min-height: 34px; padding: .3rem .45rem; }
+  .skill-container li img { width: 17px; height: 17px; }
   .experience-container, .project-container, .skill-container li { break-inside: avoid; page-break-inside: avoid; }
-  .experience-container, .project-container { margin: 0; }
+  .experience-container, .project-container { margin: 0; padding: .7rem; border-color: #999; }
+  .experience-container h3, .project-container h3 { margin-bottom: .35rem; font-size: 12px; }
+  .experience-container h3 img { width: 34px; height: 20px; }
+  .role-details, .involvement { margin-bottom: .5rem; font-size: 7px; }
+  .experience-list, .outcome { font-size: 10px; }
+  .experience-list li, .outcome li { margin-bottom: .25rem; }
   a { color: #000 !important; }
 }
