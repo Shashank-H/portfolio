@@ -206,7 +206,7 @@ article blockquote {
 .blog-card {
     border: 1px solid var(--border-color);
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 0;
     transition: transform 0.2s, box-shadow 0.2s;
     background-color: var(--bg-color);
     display: flex;
