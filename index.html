@@ -9,7 +9,7 @@
   <title>Shashank H - Generalist Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -21,9 +21,14 @@
 </head>
 
 <body>
-  <header>
-    <h1>Shashank Harikripa</h1>
-    <h5>Generalist Engineer | Full Stack | AI | System Design | <span id="years-experience"></span> Years Experience</h5>
+  <header class="site-header">
+    <div class="identity-block">
+      <p class="kicker">Portfolio / 2025</p>
+      <h1>Shashank<br />Harikripa</h1>
+      <p class="hero-summary">Generalist engineer for resilient, high-leverage product systems.</p>
+    </div>
+    <div class="experience-stamp">Full Stack · AI · System Design<br /><span id="years-experience"></span> years building in startups</div>
+    <h5 class="sr-only">Generalist Engineer | Full Stack | AI | System Design | <span id="years-experience-accessible"></span> Years Experience</h5>
     <nav>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -33,28 +38,17 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="/blog/">Blog</a></li>
         <li><a onclick="logResumeDownload()" href="Shashank H - Generalist Engineer.pdf" download>Resume</a></li>
-        <li>
-          <button id="theme-toggle" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" class="theme-toggle-btn">
-            <!-- Palette Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
-              <path
-                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.109 0-1.422 1.153-2.578 2.578-2.578 3.069 0 5.439-2.438 5.439-5.438 0-4.562-3.687-8.062-8.79-8.062z">
-              </path>
-            </svg>
-          </button>
-          <!-- Theme Menu Container -->
-          <div id="theme-menu-overlay" class="theme-menu-overlay" aria-hidden="true"></div>
-          <div id="theme-menu" class="theme-menu" role="menu" aria-hidden="true">
-            <!-- Content injected by JS -->
-          </div>
-        </li>
+
       </ul>
     </nav>
+    <button id="theme-toggle" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" class="theme-toggle-btn theme-toggle-floating">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.109 0-1.422 1.153-2.578 2.578-2.578 3.069 0 5.439-2.438 5.439-5.438 0-4.562-3.687-8.062-8.79-8.062z"></path>
+      </svg>
+    </button>
+    <div id="theme-menu-overlay" class="theme-menu-overlay" aria-hidden="true"></div>
+    <div id="theme-menu" class="theme-menu" role="menu" aria-hidden="true"></div>
     <script src="theme.js"></script>
     <script>
       // Calculate years of experience from first job start date
@@ -64,6 +58,7 @@
         const diffMs = currentDate - startDate;
         const years = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 365.25));
         document.getElementById('years-experience').textContent = years + '+';
+        document.getElementById('years-experience-accessible').textContent = years + '+';
       })();
     </script>
     <section id="header-contact">

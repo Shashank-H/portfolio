@@ -206,7 +206,7 @@ article blockquote {
 .blog-card {
     border: 1px solid var(--border-color);
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 0;
     transition: transform 0.2s, box-shadow 0.2s;
     background-color: var(--bg-color);
     display: flex;
@@ -261,11 +261,13 @@ article blockquote {
 /* Breadcrumbs */
 .breadcrumbs {
     display: flex;
+    width: fit-content;
     gap: 0.5rem;
     align-items: center;
     font-size: 0.9rem;
     opacity: 0.8;
-    margin-top: 0;
+    margin: 1.25rem 0 0 1.5rem;
+    padding: .4rem 0;
 }
 
 .breadcrumbs a {
@@ -287,15 +289,6 @@ article blockquote {
     opacity: 0.5;
 }
 
-/* Theme Switcher Positioning for Blogs */
-/* We want it absolute top-right, similar to main site but maybe fixed or absolute relative to body */
-.blog-theme-toggle {
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-    z-index: 1001;
-}
-
 span.bold {
     font-weight: bold;
 }
@@ -313,12 +306,6 @@ span.bigger {
         padding: 0 1rem;
     }
 
-    .blog-theme-toggle {
-        position: fixed;
-        top: auto;
-        bottom: 2rem;
-        right: 2rem;
-    }
 
     .blog-banner {
         margin-bottom: 1.5rem;
