@@ -157,18 +157,16 @@ h1 {
 .experience-stamp { align-self: end; padding-bottom: .25rem; color: var(--text-secondary); font-size: .75rem; letter-spacing: .08em; line-height: 1.65; text-transform: uppercase; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 
-header nav { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: .75rem; }
-.nav-links { display: flex; align-items: center; gap: 0; margin: 0; padding: 0; list-style: none; }
-.nav-links > li { border-right: 1px solid var(--rule); }
-.nav-links > li:first-child { border-left: 1px solid var(--rule); }
+header nav { grid-column: 1 / -1; }
+.nav-links { display: flex; align-items: center; gap: .15rem; margin: 0; padding: 0; list-style: none; }
 .nav-links a, .theme-toggle-btn {
-  display: inline-flex; align-items: center; min-height: 44px; padding: .65rem .85rem;
-  font-size: .6875rem; font-weight: 700; letter-spacing: .1em; text-decoration: none; text-transform: uppercase;
+  display: inline-flex; align-items: center; min-height: 34px; padding: .35rem .55rem;
+  border: 1px solid transparent; font-size: .6875rem; font-weight: 700; letter-spacing: .1em; text-decoration: none; text-transform: uppercase;
 }
-.nav-links a:hover, .nav-links a:focus-visible { background: var(--selection); color: var(--selection-text); outline: none; }
-.theme-toggle-btn { border: 0; background: transparent; color: var(--foreground); cursor: pointer; }
-.theme-toggle-btn:hover, .theme-toggle-btn:focus-visible { background: var(--surface); outline: 2px solid var(--foreground); outline-offset: 2px; }
-.theme-toggle-btn svg { width: 18px; height: 18px; }
+.nav-links a:hover, .nav-links a:focus-visible { border-color: var(--foreground); background: var(--selection); color: var(--selection-text); outline: none; }
+.theme-toggle-btn { border: 1px solid transparent; background: transparent; color: var(--foreground); cursor: pointer; }
+.theme-toggle-btn:hover, .theme-toggle-btn:focus-visible { border-color: var(--foreground); background: var(--surface); outline: none; }
+.theme-toggle-btn svg { width: 16px; height: 16px; }
 
 section { padding: clamp(3.5rem, 8vw, 7.5rem) 0; border-bottom: 1px solid var(--rule); }
 section h2 {
