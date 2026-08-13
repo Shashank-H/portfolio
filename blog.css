@@ -287,15 +287,6 @@ article blockquote {
     opacity: 0.5;
 }
 
-/* Theme Switcher Positioning for Blogs */
-/* We want it absolute top-right, similar to main site but maybe fixed or absolute relative to body */
-.blog-theme-toggle {
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-    z-index: 1001;
-}
-
 span.bold {
     font-weight: bold;
 }
@@ -313,12 +304,6 @@ span.bigger {
         padding: 0 1rem;
     }
 
-    .blog-theme-toggle {
-        position: fixed;
-        top: auto;
-        bottom: 2rem;
-        right: 2rem;
-    }
 
     .blog-banner {
         margin-bottom: 1.5rem;
