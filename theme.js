@@ -5,6 +5,10 @@ const THEMES = [
   { id: 'system', name: 'System', bg: '#F2F8FC', accent: '#000000' },
   { id: 'light', name: 'Light', bg: '#F2F8FC', accent: '#000000' },
   { id: 'dark', name: 'Dark', bg: '#24221F', accent: '#D1B46A' },
+  { id: 'ocean', name: 'Ocean', bg: '#1F2224', accent: '#6AAED1' },
+  { id: 'forest', name: 'Forest', bg: '#20241F', accent: '#8BD16A' },
+  { id: 'cyberpunk', name: 'Cyber', bg: '#241F23', accent: '#D16ABC' },
+  { id: 'coffee', name: 'Coffee', bg: '#FCF6F2', accent: '#D1956A' },
 ];
 
 class ThemePicker {

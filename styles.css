@@ -10,6 +10,11 @@
   --selection: #000000;
   --selection-text: #F2F8FC;
   --accent: #000000;
+  /* Legacy aliases keep the blog and portfolio on one token system. */
+  --bg-color: var(--background);
+  --text-color: var(--foreground);
+  --accent-color: var(--accent);
+  --border-color: var(--rule);
 }
 
 [data-theme="light"] { color-scheme: light; }
@@ -40,6 +45,61 @@
   --accent: #D1B46A;
   --selection: #F2F8FC;
   --selection-text: #24221F;
+}
+
+/* Hue variants retain the same saturation and value as the dark reference. */
+[data-theme="ocean"] {
+  color-scheme: dark;
+  --background: #1F2224;
+  --foreground: #F2F8FC;
+  --surface: #282F30;
+  --surface-subtle: #24292A;
+  --text-secondary: rgba(242, 248, 252, 0.76);
+  --text-muted: rgba(242, 248, 252, 0.68);
+  --rule: #6F7E82;
+  --accent: #6AAED1;
+  --selection: #F2F8FC;
+  --selection-text: #1F2224;
+}
+[data-theme="forest"] {
+  color-scheme: dark;
+  --background: #20241F;
+  --foreground: #F5FCF2;
+  --surface: #2B3028;
+  --surface-subtle: #252A24;
+  --text-secondary: rgba(245, 252, 242, 0.76);
+  --text-muted: rgba(245, 252, 242, 0.68);
+  --rule: #74826F;
+  --accent: #8BD16A;
+  --selection: #F5FCF2;
+  --selection-text: #20241F;
+}
+[data-theme="cyberpunk"] {
+  color-scheme: dark;
+  --background: #241F23;
+  --foreground: #FCF2FA;
+  --surface: #30282E;
+  --surface-subtle: #2A2429;
+  --text-secondary: rgba(252, 242, 250, 0.76);
+  --text-muted: rgba(252, 242, 250, 0.68);
+  --rule: #82707F;
+  --accent: #D16ABC;
+  --selection: #FCF2FA;
+  --selection-text: #241F23;
+}
+/* Coffee shifts only the light reference palette hue; lightness remains unchanged. */
+[data-theme="coffee"] {
+  color-scheme: light;
+  --background: #FCF6F2;
+  --foreground: #000000;
+  --surface: #F5EAE3;
+  --surface-subtle: #FFFDF8;
+  --text-secondary: rgba(0, 0, 0, 0.76);
+  --text-muted: rgba(0, 0, 0, 0.68);
+  --rule: rgba(0, 0, 0, 0.45);
+  --accent: #D1956A;
+  --selection: #000000;
+  --selection-text: #FCF6F2;
 }
 
 * { box-sizing: border-box; }
@@ -128,8 +188,8 @@ section > p { max-width: 65ch; color: var(--text-secondary); }
 .skill-container li { display: flex; align-items: center; min-height: 74px; gap: .75rem; margin: 0 -1px -1px 0; padding: .8rem; border: 1px solid var(--rule); background: var(--surface-subtle); font-family: "Space Mono", ui-monospace, monospace; font-size: .75rem; line-height: 1.35; }
 .skill-container li img { width: 28px; height: 28px; flex: 0 0 auto; filter: grayscale(1) contrast(1.2); }
 
-.all-experiences { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
-.experience-container { min-width: 0; margin: 0 -1px -1px 0; padding: clamp(1.25rem, 2.5vw, 2rem); border: 1px solid var(--rule); background: var(--surface-subtle); }
+.all-experiences { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(.75rem, 1.4vw, 1.25rem); }
+.experience-container { min-width: 0; padding: clamp(1.25rem, 2.5vw, 2rem); border: 1px solid var(--rule); background: var(--surface-subtle); }
 .experience-container h3 { display: flex; align-items: center; gap: .75rem; margin-bottom: .6rem; font-family: "Space Mono", ui-monospace, monospace; font-size: clamp(1rem, 1.6vw, 1.2rem); line-height: 1.25; }
 .experience-container h3 a { display: flex; flex: 0 0 auto; }
 .experience-container h3 img { width: 48px; height: 28px; object-fit: contain; padding-right: .65rem; border-right: 1px solid var(--rule); }
@@ -138,10 +198,8 @@ section > p { max-width: 65ch; color: var(--text-secondary); }
 .experience-list li, .outcome li { margin-bottom: .6rem; }
 .experience-list li::marker, .outcome li::marker { color: var(--accent); }
 
-.all-projects { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0; margin-top: 1.5rem; }
-.project-container { grid-column: span 6; margin: 0 -1px -1px 0; padding: clamp(1.25rem, 2.5vw, 2rem); border: 1px solid var(--rule); background: var(--surface); }
-.project-container:first-child { grid-column: 1 / -1; background: var(--foreground); color: var(--background); }
-.project-container:first-child .involvement, .project-container:first-child .outcome { color: color-mix(in srgb, var(--background) 78%, transparent); }
+.all-projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(.75rem, 1.4vw, 1.25rem); margin-top: 1.5rem; }
+.project-container { min-width: 0; padding: clamp(1.25rem, 2.5vw, 2rem); border: 1px solid var(--rule); background: var(--surface-subtle); }
 .project-container h3 { margin-bottom: .75rem; font-family: "Space Mono", ui-monospace, monospace; font-size: clamp(1.1rem, 2vw, 1.55rem); line-height: 1.25; }
 .involvement { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.25rem; color: var(--text-muted); font-size: .625rem; letter-spacing: .08em; line-height: 1.5; text-transform: uppercase; }
 .involvement span { border: 1px solid currentColor; padding: .24rem .4rem; }
@@ -153,11 +211,13 @@ section > p { max-width: 65ch; color: var(--text-secondary); }
 .contact-container a:hover li, .contact-container a:focus-visible li { background: var(--selection); color: var(--selection-text); }
 .contact-container li img { width: 19px; height: 19px; filter: grayscale(1) contrast(1.4); }
 
-.theme-menu { position: fixed; top: 1rem; right: 1rem; z-index: 10; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; width: min(310px, calc(100vw - 2rem)); padding: 1px; border: 1px solid var(--foreground); background: var(--foreground); opacity: 0; pointer-events: none; transform: translateY(-8px); transition: opacity .18s ease, transform .18s ease; }
+.theme-menu { position: fixed; top: 1rem; right: 1rem; z-index: 10; display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; width: min(360px, calc(100vw - 2rem)); padding: .75rem; border: 1px solid var(--foreground); background: var(--background); opacity: 0; pointer-events: none; transform: translateY(-8px); transition: opacity .18s ease, transform .18s ease; }
 .theme-menu[aria-hidden="false"] { opacity: 1; pointer-events: auto; transform: translateY(0); }
-.theme-option { display: grid; justify-items: center; gap: .5rem; min-height: 92px; padding: .7rem .35rem; border: 0; border-radius: 0; background: var(--surface-subtle); color: var(--foreground); cursor: pointer; font-size: .625rem; letter-spacing: .08em; text-transform: uppercase; }
-.theme-option:hover, .theme-option:focus-visible, .theme-option[aria-checked="true"] { background: var(--selection); color: var(--selection-text); outline: none; }
-.theme-swatch { width: 28px; height: 28px; border: 1px solid currentColor; background: var(--swatch-bg); position: relative; }
+.theme-option { display: grid; justify-items: center; gap: .5rem; min-height: 108px; padding: .7rem .35rem; border: 1px solid transparent; border-radius: 0; background: var(--surface-subtle); color: var(--foreground); cursor: pointer; font-size: .625rem; letter-spacing: .08em; text-transform: uppercase; transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
+.theme-option:hover, .theme-option:focus-visible { border-color: var(--accent); background: var(--surface); outline: none; }
+.theme-option[aria-checked="true"] { border-color: var(--foreground); background: var(--selection); color: var(--selection-text); }
+.theme-swatch { width: 44px; height: 44px; border: 2px solid currentColor; background: var(--swatch-bg); position: relative; transition: transform .18s ease; }
+.theme-option:hover .theme-swatch, .theme-option:focus-visible .theme-swatch { transform: scale(1.06); }
 .theme-swatch::after { content: ""; position: absolute; right: 0; bottom: 0; width: 50%; height: 50%; background: var(--swatch-accent); }
 .theme-menu-overlay { display: none; }
 
@@ -177,7 +237,7 @@ section > p { max-width: 65ch; color: var(--text-secondary); }
   #about h2 { margin-bottom: 1.5rem; }
   .skill-container ul { grid-template-columns: repeat(2, 1fr); }
   .all-experiences { grid-template-columns: 1fr; }
-  .project-container, .project-container:first-child { grid-column: 1 / -1; }
+  .all-projects { grid-template-columns: 1fr; }
   .contact-container { display: grid; }
   .contact-container a, .contact-container li { width: 100%; }
   .theme-menu { top: auto; bottom: 1rem; }
